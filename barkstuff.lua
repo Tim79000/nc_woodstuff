@@ -3,6 +3,17 @@ local include, nodecore
 
 local modname = minetest.get_current_modname()
 
+minetest.register_craftitem(modname..":bark", { -- Bark
+	description = "Bark",
+	inventory_image = "nc_tree_tree_side.png^[mask:" .. modname .. "_bark.png",
+	wield_image = "nc_tree_tree_side.png^[mask:" .. modname .. "_bark.png",
+	sounds = nodecore.sounds("nc_tree_woody"),
+	groups = {
+		choppy = 1,
+		bark = 1
+		}
+})
+
 minetest.register_node(modname .. ":bark_block", {
 		description = "Bark Block",
 		tiles = {"nc_tree_tree_side.png^nc_woodstuff_bark_overlay.png"}, --Currently having issues with "modname .."
