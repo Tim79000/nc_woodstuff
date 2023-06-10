@@ -22,6 +22,24 @@ minetest.register_node(modname .. ":stripped_log", {
 		on_place = minetest.rotate_node
 	})
 
+minetest.register_node(modname .. ":stripped_tree", {
+		description = "Stripped Tree Trunk",
+		tiles = {
+			modname .. "_stripped_tree_top.png",
+			modname .. "_stripped_tree_top.png",
+			modname .. "_stripped_tree_side.png"
+		},
+		groups = {
+			choppy = 2,
+			flammable = 8,
+			fire_fuel = 6,
+			log = 1,
+                        falling_node = 1
+		},
+                drop = modname .. ":stripped_log",
+		sounds = nodecore.sounds("nc_tree_woody")
+	})
+
 nodecore.register_craft({
 		label = "debark log",
 		action = "pummel",
@@ -34,6 +52,20 @@ nodecore.register_craft({
 			{name = modname .. ":bark", count = 4, scatter = 5}
 		},
 	})
+
+nodecore.register_craft({
+		label = "debark tree",
+		action = "pummel",
+		toolgroups = {choppy = 2},
+--                normal {y = normaly},
+		nodes = {
+			{match = "nc_tree:tree", replace = modname .. ":stripped_tree"}
+		},
+		items = {
+			{name = modname .. ":bark", count = 4, scatter = 5}
+		},
+	})
+
 
 -- Overrides the vanilla recipe to fix a bug.
 
