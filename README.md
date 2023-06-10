@@ -7,5 +7,5 @@ Bark
 Bark Blocks
 
 # Screenshots
-![](img/screenshot.png)
+![](screenshot.png)
 More screenshots soonish!
