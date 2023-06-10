@@ -22,17 +22,6 @@ minetest.register_node(modname .. ":stripped_log", {
 		on_place = minetest.rotate_node
 	})
 
-minetest.register_craftitem(modname..":bark", {
-	description = "Bark",
-	inventory_image = "nc_tree_tree_side.png^[mask:" .. modname .. "_bark.png",
-	wield_image = "nc_tree_tree_side.png^[mask:" .. modname .. "_bark.png",
-	sounds = nodecore.sounds("nc_tree_woody"),
-	groups = {
-		choppy = 1,
-		bark = 1
-		}
-})
-
 nodecore.register_craft({
 		label = "debark log",
 		action = "pummel",
