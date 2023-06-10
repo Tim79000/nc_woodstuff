@@ -9,6 +9,7 @@ minetest.register_craftitem(modname..":bark", { -- Bark
 	wield_image = "nc_tree_tree_side.png^[mask:" .. modname .. "_bark.png",
 	sounds = nodecore.sounds("nc_tree_woody"),
 	groups = {
+                peat_grindable_item = 1,
 		choppy = 1,
 		bark = 1
 		}
@@ -18,6 +19,7 @@ minetest.register_node(modname .. ":bark_block", {
 		description = "Bark Block",
 		tiles = {"nc_tree_tree_side.png^nc_woodstuff_bark_overlay.png"}, --Currently having issues with "modname .."
 		groups = {
+                        peat_grindable_node = 1,
 			choppy = 2,
 			flammable = 2,
 			fire_fuel = 5,
